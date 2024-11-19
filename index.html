@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimentos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Investimentos</h1>
+        <form id="investmentForm">
+            <label for="months">Quantos meses você deseja investir?</label>
+            <input type="number" id="months" min="1" required>
+
+            <label for="monthlyInvestment">Quanto deseja investir por mês (em R$)?</label>
+            <input type="number" id="monthlyInvestment" step="0.01" required>
+
+            <label for="quotaPrice">Preço por cota (em R$):</label>
+            <input type="number" id="quotaPrice" step="0.01" required>
+
+            <label for="returnPercentage">Percentual de retorno mensal (%):</label>
+            <input type="number" id="returnPercentage" step="0.01" required>
+
+            <label for="reinvest">Deseja reinvestir cotas geradas automaticamente?</label>
+            <select id="reinvest">
+                <option value="yes">Sim</option>
+                <option value="no">Não</option>
+            </select>
+
+            <button type="submit">Simular</button>
+        </form>
+
+        <div class="results">
+            <h2>Resultados</h2>
+            <p id="totalInvested"></p>
+            <p id="totalQuotas"></p>
+            <p id="totalBalance"></p>
+            <p id="finalPassiveIncome"></p>
+            <canvas id="investmentChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
