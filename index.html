@@ -9,38 +9,53 @@
 </head>
 <body>
     <div class="container">
-        <h1>Simulador de Investimentos</h1>
-        <form id="investmentForm">
-            <label for="months">Quantos meses você deseja investir?</label>
-            <input type="number" id="months" min="1" required>
+        <header>
+            <h1>Simulador de Investimentos</h1>
+            <p>Descubra como seu dinheiro pode crescer ao longo do tempo!</p>
+        </header>
 
-            <label for="monthlyInvestment">Quanto deseja investir por mês (em R$)?</label>
-            <input type="number" id="monthlyInvestment" step="0.01" required>
+        <section class="form-section">
+            <h2>Preencha os detalhes</h2>
+            <form id="investmentForm">
+                <label for="months">Quantos meses você deseja investir?</label>
+                <input type="number" id="months" min="1" required>
 
-            <label for="quotaPrice">Preço por cota (em R$):</label>
-            <input type="number" id="quotaPrice" step="0.01" required>
+                <label for="monthlyInvestment">Quanto deseja investir por mês (em R$)?</label>
+                <input type="number" id="monthlyInvestment" step="0.01" required>
 
-            <label for="returnPercentage">Percentual de retorno mensal (%):</label>
-            <input type="number" id="returnPercentage" step="0.01" required>
+                <label for="quotaPrice">Preço por cota (em R$):</label>
+                <input type="number" id="quotaPrice" step="0.01" required>
 
-            <label for="reinvest">Deseja reinvestir cotas geradas automaticamente?</label>
-            <select id="reinvest">
-                <option value="yes">Sim</option>
-                <option value="no">Não</option>
-            </select>
+                <label for="returnPercentage">Percentual de retorno mensal (%):</label>
+                <input type="number" id="returnPercentage" step="0.01" required>
 
-            <button type="submit">Simular</button>
-        </form>
+                <label for="reinvest">Deseja reinvestir cotas geradas automaticamente?</label>
+                <select id="reinvest">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
 
-        <div class="results">
+                <button type="submit">Simular</button>
+            </form>
+        </section>
+
+        <section class="results">
             <h2>Resultados</h2>
-            <p id="totalInvested"></p>
-            <p id="totalQuotas"></p>
-            <p id="totalBalance"></p>
-            <p id="finalPassiveIncome"></p>
-            <canvas id="investmentChart"></canvas>
-        </div>
+            <div class="result-text">
+                <p id="totalInvested"></p>
+                <p id="totalQuotas"></p>
+                <p id="totalBalance"></p>
+                <p id="finalPassiveIncome"></p>
+            </div>
+            <div class="charts">
+                <canvas id="investmentGrowthChart"></canvas>
+                <canvas id="monthlyIncomeChart"></canvas>
+            </div>
+        </section>
     </div>
+    <footer>
+        <p>&copy; 2024 Simulador de Investimentos. Todos os direitos reservados.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
