@@ -17,6 +17,9 @@
         <section class="form-section">
             <h2>Preencha os detalhes</h2>
             <form id="investmentForm">
+                <label for="initialInvestment">Aporte inicial (em R$):</label>
+                <input type="number" id="initialInvestment" step="0.01" required>
+
                 <label for="months">Quantos meses você deseja investir?</label>
                 <input type="number" id="months" min="1" required>
 
@@ -46,7 +49,23 @@
                 <p id="totalQuotas"></p>
                 <p id="totalBalance"></p>
                 <p id="finalPassiveIncome"></p>
+                <p id="finalTotal"></p>
             </div>
+
+            <h3>Detalhes Mensais</h3>
+            <table id="monthlyDetailsTable">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th>Investido no Mês (R$)</th>
+                        <th>Renda Passiva (R$)</th>
+                        <th>Saldo Total no Mês (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
             <div class="charts">
                 <canvas id="investmentGrowthChart"></canvas>
                 <canvas id="monthlyIncomeChart"></canvas>
